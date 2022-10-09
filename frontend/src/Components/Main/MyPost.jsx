@@ -9,7 +9,7 @@ export default function MyPost() {
   const [user, setUser] = useState();
   const id = localStorage.getItem("user_id");
   const sendRequest = async() =>{
-    const res = await axios.get(`http://localhost:5001/api/post/user/${id}`).catch((error)=>console.error)
+    const res = await axios.get(`https://mernestate.herokuapp.com/api/post/user/${id}`).catch((error)=>console.error)
     const data = res.data;
     return data;
   }

@@ -14,7 +14,7 @@ export default function AddPost() {
     address: '',
   });
   const postRequest = async()=>{
-    const res = await axios.post('http://localhost:5001/api/post/add', {
+    const res = await axios.post('https://mernestate.herokuapp.com/post/add', {
       title: input.title,
       description: input.description,
       imageUrl: input.imageUrl,

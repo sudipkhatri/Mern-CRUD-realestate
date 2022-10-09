@@ -11,7 +11,7 @@ export default function Post() {
   const[data, setData] = useState([]);
   const isLoggedIn = useSelector((state)=>state.isLoggedIn)
   const receiveRequest = async ()=>{
-    const res = await axios.get("http://localhost:5001/api/post/").catch(error=>console.log(error));
+    const res = await axios.get("https://mernestate.herokuapp.com/api/post/").catch(error=>console.log(error));
     const data = res.data;
     return data;
   }

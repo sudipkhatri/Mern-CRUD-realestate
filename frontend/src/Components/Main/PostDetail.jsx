@@ -12,7 +12,7 @@ export default function PostDetail({index, id, title, desc, img, price, address,
    navigate(`/post/update/${id}`);
   }
   const requestDelete = async()=>{
-    const res = await axios.delete(`http://localhost:5001/api/post/${id}`)
+    const res = await axios.delete(`https://mernestate.herokuapp.com/api/post/${id}`)
     .catch((error)=>console.log(error));
     const data = res.data;
     return data; 

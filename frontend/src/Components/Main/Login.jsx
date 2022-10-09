@@ -38,7 +38,7 @@ export default function Login() {
     }
   }
   const sendRequest = async(type="login") =>{
-    const res = await axios.post(`http://localhost:5001/api/user/${type}`,
+    const res = await axios.post(`https://mernestate.herokuapp.com/api/user/${type}`,
     {
       name: value.name,
       email: value.email,

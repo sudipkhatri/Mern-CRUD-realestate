@@ -19,7 +19,7 @@ export default function Update() {
         defaultInput();
     }, []);
     const defaultInput = async ()=>{
-        const res = await axios.get(`http://localhost:5001/api/post/${id}`).catch((error)=>console.log(error));
+        const res = await axios.get(`https://mernestate.herokuapp.com/api/post/${id}`).catch((error)=>console.log(error));
         const data = await res.data.postData;
         setInput({
             title: data.title,
@@ -32,7 +32,7 @@ export default function Update() {
     
     }
     const sendRequest = async()=>{
-        const res = await axios.patch(`http://localhost:5001/api/post/update/${id}`, {
+        const res = await axios.patch(`https://mernestate.herokuapp.com/api/post/update/${id}`, {
             title: input.title,
             description: input.description,
             imageUrl: input.imageUrl,
