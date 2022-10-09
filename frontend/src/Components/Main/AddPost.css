@@ -1,0 +1,76 @@
+.post_container, .update_container{
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(212, 223, 237);
+    opacity: 0.9;
+}
+
+.post_info{
+    width: 500px;
+    min-height: 500px ;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: #000;
+}
+.post_info >p {
+    display: block;
+    width: 95%;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #f4f4f4;
+}
+.add_details{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.post_info > input,.post_info > textarea{
+    box-sizing: border-box;
+    background-color: #000;
+    color: #f4f4f4;
+    font-size: 1rem;
+    width: 96%;
+    margin: 4px 0;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgb(169, 69, 69);
+    outline: none;
+}
+.post_info > textarea{
+    height: 100px;
+}
+.post_info > input[type="description"]{
+    height: 100px;
+}
+
+.post_info > input:focus, .post_info > textarea:focus{
+    font-size: 1rem;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #63e073;
+}
+
+.post_info > button{
+    display: block;
+    width: 96%;
+}
+@media (max-width: 520px) {
+    
+    .post_container{
+        height: 500px;
+    }
+    .post_info{
+        width: 92%;
+        max-height: 300px;
+    }
+
+}

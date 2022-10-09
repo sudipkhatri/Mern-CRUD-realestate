@@ -1,0 +1,15 @@
+.main_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data_holder{
+    display: grid;
+    margin: 0 auto;
+    gap: 20px;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300, 1fr));
+}
+

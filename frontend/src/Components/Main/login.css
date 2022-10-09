@@ -1,0 +1,85 @@
+.login_form, .login_details{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgb(169, 75, 75);
+    background-color: #211c1c;
+    color: #f4f4f4;
+    border: 1px solid #EF4B4C;
+    border-radius: 12px;
+}
+h3{ 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10% 0;
+}
+input{
+    
+    width: 80%;
+    padding:12px;
+    margin:10px;
+    border: 1px solid #952c2c;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input:focus{
+    width: 80%;
+    border: 1px solid rgb(77, 154, 176);
+    padding:12px;
+    margin:10px;
+}
+button{
+    text-decoration: none;
+    color: #f4f4f4;
+    text-decoration: none;
+    width: 80%;
+    font-size: 1rem;
+    background-color: #EF4B4C;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    transition: all 1.5 ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    margin:10px 0;
+    border: none;
+}
+
+.err{
+    font-size: 0.8rem;
+    color: rgb(234, 86, 86);
+}
+
+button:hover{
+    background-color: #f90303;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 520px) {
+    
+    .user_form{
+        width: 95%;
+    }
+    input, button{
+        width:90%;
+    }
+    input:focus{
+        width: 90%;
+        
+    }
+}

@@ -1,0 +1,31 @@
+.all_components{
+    display: flex;
+    flex-direction: column;
+
+}
+.header, .body{
+    width: 100%;
+    min-height: 90vh;
+    height: auto ;
+    display: flex;
+    gap: 1px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.body_body{
+    display: flex;
+    min-height: 90vh;
+    height: auto;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.body_posts{
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
