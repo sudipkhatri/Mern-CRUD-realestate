@@ -12,7 +12,7 @@ const URI = mongoose.connect(
   },
   function (error) {
     if (error) {
-      console.log(error);
+      return console.log(error);
     }
     console.log("db connection success.");
   }
