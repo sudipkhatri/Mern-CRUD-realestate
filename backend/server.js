@@ -4,6 +4,7 @@ import URI from './db.js';
 import router from './Routes/userRoutes.js';
 import postRouter from './Routes/postRoutes.js';
 import cors from 'cors';
+import * as path from "path";
 
 const app = express();
 app.use(cors());
