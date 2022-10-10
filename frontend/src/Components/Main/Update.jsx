@@ -56,7 +56,7 @@ export default function Update() {
             [e.target.name] : e.target.value,
         }))
     }
-    console.log(input);
+    //console.log(input);
   return (
     <div className='update_container'>
         <div className="data_section">
