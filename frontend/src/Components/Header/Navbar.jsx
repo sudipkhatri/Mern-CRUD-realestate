@@ -12,7 +12,7 @@ export default function Navbar({click}) {
   //console.log(isLoggedIn);
 
   const handleLogout = ()=>{
-    promise.resolve(dispatch(authActions.logout())).then(navigator("/auth"));
+    dispatch(authActions.logout()).then(navigator("/auth"));
   }
 
   return (
