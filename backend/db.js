@@ -1,8 +1,9 @@
+import {} from "dotenv/config";
 import mongoose from "mongoose";
-import {} from 'dotenv/config';
 
 const URI = mongoose.connect(
-  process.env.URI,
+   process.env.URI,
+ // "mongodb+srv://user1:realestateu1@realestateapp.mloetdk.mongodb.net/?retryWrites=true&w=majority",
   {
     autoIndex: false, // Don't build indexes
     maxPoolSize: 10, // Maintain up to 10 socket connections
@@ -19,5 +20,3 @@ const URI = mongoose.connect(
 );
 
 export default URI;
-
-

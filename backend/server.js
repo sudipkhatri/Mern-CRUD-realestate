@@ -5,6 +5,10 @@ import router from './Routes/userRoutes.js';
 import postRouter from './Routes/postRoutes.js';
 import cors from 'cors';
 import * as path from "path";
+import { fileURLToPath } from "url";
+
+
+
 
 
 
@@ -18,7 +22,10 @@ URI;
 const PORT = process.env.PORT;
 // server production
 if(process.env.NODE_ENV === "production"){
-   
+
+    const __filename = fileURLToPath(import.meta.url);
+    // 👇️ "/home/john/Desktop/javascript"
+    const __dirname = path.dirname(__filename);
     app.use(express.static(path.join(__dirname, "/frontend/build")));
     app.get("*", (req, res)=>{
         res.sendFile(path.join(__dirname, "frontend", "build", "index.html"))
