@@ -23,9 +23,7 @@ const PORT = process.env.PORT || 5000;
 // server production
 if(process.env.NODE_ENV === "production"){
 
-    const __filename = fileURLToPath(import.meta.url);
-    // 👇️ "/home/john/Desktop/javascript"
-    const __dirname = path.dirname(__filename);
+    const __dirname = path.resolve();
     app.use(express.static(path.join(__dirname, "/frontend/build")));
     app.get("*", (req, res)=>{
         res.sendFile(path.join(__dirname, "frontend", "build", "index.html"))
