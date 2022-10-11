@@ -5,7 +5,7 @@ import router from './Routes/userRoutes.js';
 import postRouter from './Routes/postRoutes.js';
 import cors from 'cors';
 import * as path from "path";
-import { fileURLToPath } from "url";
+
 
 
 const app = express();
@@ -18,12 +18,16 @@ URI;
 const PORT = process.env.PORT;
 // server production
 if(process.env.NODE_ENV === "production"){
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    app.use(express.static(path.join("frontend/build")));
+   
+    app.use(express.static(path.join(__dirname, "/frontend/build")));
     app.get("*", (req, res)=>{
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+        res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'))
     });  
+}
+else{
+    app.get('/', (req, res)=>{
+        res.send('Api is running.')
+    })
 }
 
 app.listen(PORT, ()=>{
