@@ -19,7 +19,7 @@ app.use('/api/user', router);
 app.use("/api/post", postRouter);
 URI;
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 // server production
 if(process.env.NODE_ENV === "production"){
 
