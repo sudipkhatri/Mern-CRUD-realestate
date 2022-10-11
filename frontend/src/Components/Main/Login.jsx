@@ -14,7 +14,7 @@ export default function Login() {
     password : ""
   });
   const[signup, setSignUp] = useState(false);
-  const[error, setError] = useState(false);
+  //const[error, setError] = useState(false);
 
   const handleChange = (e) =>{
     e.preventDefault();
@@ -85,7 +85,7 @@ export default function Login() {
             onChange={handleChange}
             required
             />
-            {error && <span className='err'>Email or Password Incorrect.</span>}
+            {/* {error && <span className='err'>Email or Password Incorrect.</span>} */}
             <button type="submit">Submit</button>
             <button onClick={(e)=>{
               e.preventDefault();

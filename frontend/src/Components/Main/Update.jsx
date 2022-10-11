@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import './AddPost.css';
+import { useCallback } from 'react';
 
 export default function Update() {
     const id = useParams().id;
@@ -17,8 +18,10 @@ export default function Update() {
     });
     useEffect(()=>{
         defaultInput();
-    }, []);
-    const defaultInput = async ()=>{
+    }, [defaultInput]);
+
+    const defaultInput = useCallback(
+    async ()=>{
         const res = await axios.get(`https://mernestate.herokuapp.com/api/post/${id}`).catch((error)=>console.log(error));
         const data = await res.data.postData;
         setInput({
@@ -30,7 +33,7 @@ export default function Update() {
 
         });
     
-    }
+    }, [id])
     const sendRequest = async()=>{
         const res = await axios.patch(`https://mernestate.herokuapp.com/api/post/update/${id}`, {
             title: input.title,
