@@ -15,7 +15,8 @@ export default function Body() {
                 </div>
               </div>
             <div className="mobile_screen">
-              <iframe className='video_input' title="user uploaded videos"   src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+              {/* https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1 */}
+              <iframe className='video_input' title="user uploaded videos" loading="lazy"  src="https://www.youtube.com/embed/eBFB8CXLHsc">
               </iframe>
             {/* <video width="100%" autoplay loop muted>
               <source src="https://www.youtube.com/watch?v=d_yzP4qnZwQ" type="video/mp4" />

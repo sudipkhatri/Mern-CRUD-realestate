@@ -29,7 +29,10 @@ export default function PostDetail({index, id, title, desc, img, price, address,
       </div>}
       <div className="data_items">
         <div className="data_img">
-            <img src={img} alt="container property"/>
+          {/* loading="lazy" */}
+          {/* <iframe className='video_input' title="user uploaded videos" loading="lazy"  src="https://www.youtube.com/embed/eBFB8CXLHsc"></iframe> */}
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/eBFB8CXLHsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {/* <img src={img} alt="container property" /> */}
         </div>
         <div className="data_body">
           <div className="data_title">

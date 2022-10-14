@@ -13,6 +13,7 @@ import Update from './Components/Main/Update';
 import { authActions } from './Store';
 import { useSelector, useDispatch } from 'react-redux';
 import Home from './Home';
+//import Log from './Components/Main/Log';
 
 function App() {
   const [show, setShow] = useState(false);

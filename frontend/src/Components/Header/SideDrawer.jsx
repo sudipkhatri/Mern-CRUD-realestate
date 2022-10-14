@@ -11,7 +11,7 @@ export default function SideDrawer({show, click}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogout = () =>{
-    dispatch(authActions.logout()).then(navigate('/login'));
+    dispatch(authActions.logout()).then(navigate('/auth'));
   }
     
   return (
@@ -19,15 +19,16 @@ export default function SideDrawer({show, click}) {
          <div className="sidenav_list">
           {!isLoggedIn ? 
             <ul className='side_linklist'>
+               <li>
+                   <Link to='/'>Home</Link>
+                </li>
                 <li>
                   <Link to='/auth'>Login</Link>
                 </li>
             </ul>
             :
             <ul className='side_linklist'>
-                 <li>
-                   <Link to='/'>Home</Link>
-                </li>
+                
                 <li>
                   <Link to='/post'>All Post</Link>
                 </li>
@@ -38,7 +39,7 @@ export default function SideDrawer({show, click}) {
                   <Link to='/post/add'>Add Post</Link>
                 </li>
                 <li>
-                  <button className='action_btn' onClick={handleLogout}>Logout</button>
+                  <button className='btn_action' onClick={handleLogout}>Logout</button>
                 </li>
             </ul>
 }

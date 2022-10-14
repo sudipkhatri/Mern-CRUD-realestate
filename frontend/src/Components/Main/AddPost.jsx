@@ -40,8 +40,10 @@ export default function AddPost() {
  
   return (
     <div className='post_container'>
+      <div className="title_h2">
+          <h2> Add Details Below</h2>
+        </div>
       <div className="add_details">
-        <h2> Add Details Below</h2>
         <form className='post_info' onSubmit={handleSubmit}>
             <input 
             type="text"

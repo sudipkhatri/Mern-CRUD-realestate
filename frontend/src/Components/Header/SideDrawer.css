@@ -50,13 +50,16 @@
 .side_linklist > li > a{
 
     display: block;
+    width: 100%;
     text-decoration: none;
     color: #f4f4f4;
     text-decoration: none;
 
 }
-.action_btn{
+.btn_action{
+    display: block;
+    width: auto;
     margin: 0 auto;
     padding: 0;
-    text-align: center;
+    text-align: left;
 }

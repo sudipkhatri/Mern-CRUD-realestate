@@ -2,8 +2,6 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import PostDetail from './PostDetail';
 import { useSelector } from 'react-redux';
-
-
 import './Post.css';
 
 export default function Post() {
@@ -19,9 +17,9 @@ export default function Post() {
     receiveRequest().then((data)=>setData(data.allPost))
   }, [])
 //  console.log(data);
-
+  const className = isLoggedIn ? "position_data" : "data_wrapper"
   return (
-    <div className='data_wrapper'>
+    <div className={className}  >
       <div className="data_head">
         {isLoggedIn ?
         <h1>All Houses</h1> :
