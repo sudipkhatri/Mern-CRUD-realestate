@@ -25,8 +25,8 @@ function App() {
        e.preventDefault();
 
        console.log("beforeunload event triggered");
-       const id = localStorage.getItem("user_id");
-       id && localStorage.removeItem("user_id");
+      //  const id = localStorage.getItem("user_id");
+      //  id && localStorage.removeItem("user_id");
        return (e.returnValue = "Are you sure you want to exit?");
      };
 

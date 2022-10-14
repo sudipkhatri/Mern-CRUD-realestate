@@ -55,7 +55,7 @@ export default function AddPost() {
             <input 
             type="text"
             name="imageUrl"
-            placeholder='Eg: https://img.jpeg'
+            placeholder='Eg: https://videos.mp4'
             onChange={handleChange}
             required
             />
