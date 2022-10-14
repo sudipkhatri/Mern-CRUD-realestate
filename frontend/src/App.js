@@ -20,6 +20,22 @@ function App() {
   const dispatch = useDispatch();
   // this is for refresh functionality 
   const isLoggedIn = useSelector((state)=>state.isLoggedIn);
+   useEffect(() => {
+     const handleTabClose = (e) => {
+       e.preventDefault();
+
+       console.log("beforeunload event triggered");
+       const id = localStorage.getItem("user_id");
+       id && localStorage.removeItem("user_id");
+       return (e.returnValue = "Are you sure you want to exit?");
+     };
+
+     window.addEventListener("beforeunload", handleTabClose);
+
+     return () => {
+       window.removeEventListener("beforeunload", handleTabClose);
+     };
+   }, []);
   useEffect(()=>{
     if(localStorage.getItem("user_id")){
       dispatch(authActions.login());

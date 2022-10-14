@@ -1,3 +1,7 @@
+.auth_login{
+min-height: 100vh;
+height: auto;
+}
 .context {
     width: 100%;
     position: absolute;
@@ -194,13 +198,30 @@ button{
     }
 
 }
-
 @media (max-width: 520px) {
-    .user_form{
-        width: 96%;
+    .login_form{
+        min-height: 90vh;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .user_form{
+        width: 95%;
     }
     input, button{
-        width: 94%;
+        width:90%;
+    }
+    input:focus{
+        width: 90%;
+        
+    }
+}
+@media (max-width: 340px) {
+
+    .user_form{
+        min-height: 420px;
+        height: auto;
     }
 }

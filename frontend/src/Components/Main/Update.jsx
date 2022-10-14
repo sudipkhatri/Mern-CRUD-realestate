@@ -17,11 +17,8 @@ export default function Update() {
 
     });
     useEffect(()=>{
-        defaultInput();
-    }, [defaultInput]);
-
-    const defaultInput = useCallback(
-    async ()=>{
+        const defaultInput = 
+        async ()=>{
         const res = await axios.get(`https://mernestate.herokuapp.com/api/post/${id}`).catch((error)=>console.log(error));
         const data = await res.data.postData;
         setInput({
@@ -33,7 +30,24 @@ export default function Update() {
 
         });
     
-    }, [id])
+    };
+        defaultInput();
+    }, [id]);
+
+    // const defaultInput = useCallback(
+    // async ()=>{
+    //     const res = await axios.get(`https://mernestate.herokuapp.com/api/post/${id}`).catch((error)=>console.log(error));
+    //     const data = await res.data.postData;
+    //     setInput({
+    //         title: data.title,
+    //         description: data.description,
+    //         imageUrl: data.imageUrl,
+    //         price: data.price,
+    //         address: data.address,
+
+    //     });
+    
+    // }, [id])
     const sendRequest = async()=>{
         const res = await axios.patch(`https://mernestate.herokuapp.com/api/post/update/${id}`, {
             title: input.title,
@@ -62,9 +76,12 @@ export default function Update() {
     //console.log(input);
   return (
     <div className='update_container'>
-        <div className="data_section">
+        <div className="title_h2 update">
+            <h2> Update</h2>
+        </div>
+        <div className="add_details">
            <form className='post_info' onSubmit={handleSubmit}>
-            <p>Update</p>
+            {/* <p>Update</p> */}
             <input 
             type="text"
             name = "title"
