@@ -14,7 +14,16 @@ export default function Post() {
     return data;
   }
   useEffect(()=>{
-    receiveRequest().then((data)=>setData(data.allPost))
+    let unSubsribe = false; 
+    receiveRequest().then((data)=>{
+      if(!unSubsribe) {
+      setData(data.allPost)
+      }})
+      // clean up function
+      return () =>{
+        //console.log("unsubribed");
+        unSubsribe = true;
+      }
   }, [])
 //  console.log(data);
   const className = isLoggedIn ? "position_data" : "data_wrapper"

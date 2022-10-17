@@ -14,7 +14,7 @@ export default function Log() {
     password : ""
   });
   const[signup, setSignUp] = useState(false);
-  //const[error, setError] = useState(false);
+  const[errors, setError] = useState(false);
 
   const handleChange = (e) =>{
     e.preventDefault();
@@ -27,32 +27,45 @@ export default function Log() {
     e.preventDefault();
 
     if(signup){
-      sendRequest("signup").then((data)=>localStorage.setItem("user_id",data.newUser._id))
-      .then(()=>dispatch(authActions.login({})))
-      .then(navigator("/post"));
+      sendRequest("signup");
+      // .then((data)=>localStorage.setItem("user_id",data.newUser._id))
+      // .then(()=>dispatch(authActions.login({})))
+      // .then(navigator("/post"));
     }
     else{
-      sendRequest().then((data)=>localStorage.setItem("user_id",data.userDetails._id))
-      .then(()=>dispatch(authActions.login({})))
-      .then(navigator("/post"));
+      sendRequest();
+      // .then((data)=>localStorage.setItem("user_id",data.userDetails._id))
+      // .then(()=>dispatch(authActions.login({})))
+      // .then(navigator("/post"));
     }
   }
   const sendRequest = async(type="login") =>{
-    const res = await axios.post(`https://mernestate.herokuapp.com/api/user/${type}`,
+
+    try{
+      const res = await axios.post(`https://mernestate.herokuapp.com/api/user/${type}`,
     {
       name: value.name,
       email: value.email,
       password: value.password,
-    }).catch((error)=>{
-      if(error){
-        alert('invalid password combination.');
-        navigator('/auth')
-       
-      }
-    });
+    })
     const data = await res.data;
-    //console.log(data);
+    if(type === "signup"){
+      localStorage.setItem("user_id",data.newUser._id);
+    }
+    else{
+      localStorage.setItem("user_id",data.userDetails._id);
+    }
+    dispatch(authActions.login({}));
+    //console.log(dispatch(authActions.login({})));
+    navigator("/post");
     return data;
+    }
+    catch(error){
+      if(error.response && error.response.status >= 400 && error.response.status <= 400){
+        setError(true);
+      } 
+    }
+    
   }
   return (
     <div className='auth_login'>
@@ -82,7 +95,7 @@ export default function Log() {
             onChange={handleChange}
             required
             />
-            {/* {error && <span className='err'>Email or Password Incorrect.</span>} */}
+            {errors && <span className='err'>Email or Password Incorrect.</span>}
             <button type="submit">Submit</button>
             <button onClick={(e)=>{
               e.preventDefault();
